@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #c0c0c0;
+  --silver: #c0c0c0;
+  --yellow: #ffd700;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-silver: #c0c0c0;
+  --color-yellow: #ffd700;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.cursor-none * {
+  cursor: none !important;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease-out 0.4s both;
+}
+
+/* Hero title inversion effect */
+.hero-title {
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+/* When cursor is over the title, invert the text */
+body.cursor-over-title .hero-title {
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
