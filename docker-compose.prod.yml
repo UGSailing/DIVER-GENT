@@ -1,7 +1,7 @@
 services:
   site:
     build: .
-    container_name: site
+    container_name: divergent-site
     healthcheck:
       test: curl --fail -s http://localhost:3000
       interval: 10s
