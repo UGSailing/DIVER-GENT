@@ -1,7 +1,7 @@
 services:
   site:
     build: .
-    container_name: divergent-site
+    container_name: divergent
     restart: always
 
     healthcheck:
@@ -19,7 +19,7 @@ services:
 
       # Router
       - traefik.http.routers.divergent.rule=Host(`diver-gent.ugent.be`)
-      - traefik.http.routers.divergent.service=divergent-site
+      - traefik.http.routers.divergent.service=divergent
       - traefik.http.routers.divergent.entrypoints=https
       - traefik.http.routers.divergent.tls=true
       - traefik.http.routers.divergent.tls.certresolver=letsencrypt
