@@ -23,10 +23,10 @@ export default function ContactForm() {
         });
     };
     return (
-        <div className="bg-gradient-to-br from-silver/5 to-silver/10 p-8 rounded-2xl border border-yellow/20">
+        <div className="bg-gradient-to-br from-white to-silver/10 p-8 rounded-2xl border border-yellow/20">
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                    <label htmlFor="name" className="block text-silver font-medium mb-2">
+                    <label htmlFor="name" className="block text-foreground font-medium mb-2">
                         Naam
                     </label>
                     <input
@@ -36,13 +36,13 @@ export default function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-black/50 border border-silver/20 rounded-lg text-silver focus:outline-none focus:border-yellow transition-colors"
+                        className="w-full px-4 py-3 bg-white border border-silver/40 rounded-lg text-foreground placeholder:text-silver focus:outline-none focus:border-yellow transition-colors"
                         placeholder="Jouw naam"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="email" className="block text-silver font-medium mb-2">
+                    <label htmlFor="email" className="block text-foreground font-medium mb-2">
                         Email
                     </label>
                     <input
@@ -52,13 +52,13 @@ export default function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-black/50 border border-silver/20 rounded-lg text-silver focus:outline-none focus:border-yellow transition-colors"
+                        className="w-full px-4 py-3 bg-white border border-silver/40 rounded-lg text-foreground placeholder:text-silver focus:outline-none focus:border-yellow transition-colors"
                         placeholder="jouw.email@voorbeeld.be"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="subject" className="block text-silver font-medium mb-2">
+                    <label htmlFor="subject" className="block text-foreground font-medium mb-2">
                         Onderwerp
                     </label>
                     <input
@@ -68,13 +68,13 @@ export default function ContactForm() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-black/50 border border-silver/20 rounded-lg text-silver focus:outline-none focus:border-yellow transition-colors"
+                        className="w-full px-4 py-3 bg-white border border-silver/40 rounded-lg text-foreground placeholder:text-silver focus:outline-none focus:border-yellow transition-colors"
                         placeholder="Onderwerp van je bericht"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="message" className="block text-silver font-medium mb-2">
+                    <label htmlFor="message" className="block text-foreground font-medium mb-2">
                         Bericht
                     </label>
                     <textarea
@@ -84,14 +84,14 @@ export default function ContactForm() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 bg-black/50 border border-silver/20 rounded-lg text-silver focus:outline-none focus:border-yellow transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-white border border-silver/40 rounded-lg text-foreground placeholder:text-silver focus:outline-none focus:border-yellow transition-colors resize-none"
                         placeholder="Jouw bericht..."
                     />
                 </div>
 
                 <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-yellow text-black font-semibold rounded-lg hover:bg-yellow/90 transition-all transform hover:scale-105 shadow-lg shadow-yellow/20"
+                    className="w-full px-8 py-4 bg-yellow text-white font-semibold rounded-lg hover:bg-yellow/90 transition-all transform hover:scale-105 shadow-lg shadow-yellow/30"
                 >
                     Verstuur Bericht
                 </button>

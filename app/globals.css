@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #c0c0c0;
-  --silver: #c0c0c0;
-  --yellow: #ffd700;
+  /* Brand-aligned light theme */
+  --background: #f9fafb;
+  /* soft white */
+  --foreground: #353535;
+  /* logo dark */
+  --silver: #6b7280;
+  /* neutral gray for secondary text */
+  --yellow: #f1a42b;
+  /* logo light accent */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-silver: #c0c0c0;
-  --color-yellow: #ffd700;
+  --color-silver: var(--silver);
+  --color-yellow: var(--yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -22,16 +27,13 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-.cursor-none * {
-  cursor: none !important;
-}
-
 /* Custom animations */
 @keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -48,16 +50,4 @@ body {
 
 .animate-fade-in-delay-2 {
   animation: fade-in 1s ease-out 0.4s both;
-}
-
-/* Hero title inversion effect */
-.hero-title {
-  position: relative;
-  transition: filter 0.3s ease;
-}
-
-/* When cursor is over the title, invert the text */
-body.cursor-over-title .hero-title {
-  filter: invert(1);
-  mix-blend-mode: difference;
 }
