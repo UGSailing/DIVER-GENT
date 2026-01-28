@@ -8,14 +8,8 @@ export default function Home() {
     <main className="pt-20">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
-        {/* Layered gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-yellow/5 to-white"></div>
 
-        {/* Animated gradient orbs */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-yellow/20 via-yellow/5 to-transparent rounded-full blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-yellow/15 via-transparent to-transparent rounded-full blur-[80px]"></div>
-
-        {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#35353508_1px,transparent_1px),linear-gradient(to_bottom,#35353508_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">

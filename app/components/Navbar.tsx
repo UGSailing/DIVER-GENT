@@ -27,6 +27,9 @@ export default function Navbar() {
               <Link href="/about" className="text-foreground hover:text-yellow transition-colors font-medium">
                 Over Ons
               </Link>
+              <Link href="/events/studentteamfair" className="text-foreground hover:text-yellow transition-colors font-medium">
+                Student Team Fair
+              </Link>
             </div>
             <div className="flex items-center gap-4">
               <a
@@ -84,11 +87,11 @@ export default function Navbar() {
               Over Ons
             </Link>
             <Link
-              href="/contact"
+              href="/events/studentteamfair"
               className="block py-2 text-foreground hover:text-yellow transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              Student Team Fair
             </Link>
 
             <div className="flex items-center gap-4 pt-2">
