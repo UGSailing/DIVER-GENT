@@ -1,16 +1,32 @@
 services:
   site:
     build: .
-    container_name: site
+    container_name: divergent
+    restart: always
+
     healthcheck:
       test: curl --fail -s http://localhost:3000
       interval: 10s
       timeout: 10s
       retries: 5
       start_period: 120s
+
+    labels:
+      - traefik.enable=true
+
+      # Service
+      - traefik.http.services.divergent.loadbalancer.server.port=3000
+
+      # Router
+      - traefik.http.routers.divergent.rule=Host(`diver-gent.ugent.be`, `divergent.ugent.be`)
+      - traefik.http.routers.divergent.service=divergent
+      - traefik.http.routers.divergent.entrypoints=https
+      - traefik.http.routers.divergent.tls=true
+      - traefik.http.routers.divergent.tls.certresolver=letsencrypt
+
     networks:
-      - app-network
+      - traefik_proxy
 
 networks:
-  app-network:
-    driver: bridge
+  traefik_proxy:
+    external: true
